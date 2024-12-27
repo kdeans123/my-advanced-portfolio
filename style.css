@@ -1,3 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:wght@400;700;900&display=swap');
+
 * {
-    color: red;
+    margin: 0;   /*no default margin or pading, we want to set them ourselves */
+    padding: 0;
+    box-sizing: border-box;  /*  it makes most sesne for most developers */
+    font-family: "Roboto", sans-serif;   /*  we need to google fonts: roboto regular 400, bold 700 and bold 900   */
 }
+
+li {
+    list-style-type: none;  /*   it gets rid of bullet points of the list */
+}
+
+p{
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;      /* no underline for the text - on any anchor text */
+}
+    
+button {
+    cursor: pointer;
+    /* adding a pointer when hivering over a button */
+}
+
+section {
+    background-color: rgb(245, 245, 245);
+}
+
+.orange {
+    color: #f06449;
+}
+
+.title {
+    font-size: 120px;
+    margin-bottom: 12px;
+    text-align: left;
+    line-height: 1;
+}
+
+.click {
+    transition: all 300ms ease;
+}
+
+.click:hover { 
+    transform: scale(1.1);       /* when I hover over social icons trhey get bigger */
+}
+
+.click:active {   /* when you click */
+    transform: scale(0.8);    
+}
+
+
+/* LANDING PAGE */
+
+#landing-page {
+    min-height: 100vh;       /* because we do not ever want to go to the next section on laptop nor mobile, ever */
+}
+
+.header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* it will put in the middle for you - ASK  */
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 30px;      /* to get some space on the sides  */
+}
+
+.header__para {
+    font-size: 24px;
+    line-height: 2;
+    max-width: 450px;
+}
+
+.social__list {
+    margin-top: 16px;
+    display: flex;
+}
+
+.social__link {
+    background-color: #f06449;
+    color: white;
+    padding: 6px;      /* 6px all around */
+    width: 32px;     /* incremental 8 for the width and height - good practice from top tech companies */
+    height: 32px;
+    font-size: 14px;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.mail__btn {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #242424;
+    color: white;
+    position: absolute;       /* to position it in the right bottom corner of the landing page: position absolute, bottom 32px, right 40px */
+    bottom: 32px;
+    right: 40px;
+}
+
+.scroll {
+    position: absolute;     /* because we do not want to ruin any other elements */
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(50%);       /* with position absolute you always want to transform translate always 50% */
+    }
+
+.scroll__icon {
+    width: 20px;
+    height: 30px;
+    border: 2px solid #242424;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll__icon:after {    /* pseudo element */
+    content: "";     /* because it is a pseudo element we need to set a content even it is to nothing */
+    background-color: #242424;
+    width: 4px;
+    height: 6px;
+    border-radius: 2px;
+    animation: scroll 1000ms infinite alternate-reverse;        /* we need to add class to it so it actually animates. Alternate reverse so it slowly gets back to 0% rather than jumping*/
+}
+
+/* to CREATE ANIMATION you have to add keyframes */
+
+@keyframes scroll {
+    0% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   /*  links are centered now */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;   /* centers navigation */
+    height: 100px;
+    padding: 0 20px;     /* vs padding 0 32px on the header */
+}
+
+#personal-logo {   /* logo changes color from white to black , you can also transition it - using filter   */
+    width: 50px;
+    height: 50px;
+    filter: invert(1);
+}
+
+.nav__link--list {
+    display: flex;   /* so the links of the nav are side by side  */
+}
+
+
+
+.nav__link {
+    margin: 0 12px;    /* 0 for top and bottom, 12 right and left, it spreads out the links of the navigation */
+}
+
+.nav__link--anchor {
+    font-size: 16px;
+    color: #242424;
+    font-weight: 700;
+}
+
+.fa-adjust {
+    font-size: 20px;
+}
+
+
+
