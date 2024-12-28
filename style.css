@@ -41,8 +41,8 @@ section {
 }
 
 .container {
-    padding: 50px 0;
-    /* so there is some space top and bottom, and left and right space we will add to the row */
+    padding: 50px 0;     /* so there is some space top and bottom, and left and right space we will add to the row */
+    width: 100%;         /* now the container is all the way wide */
 }
 
 .row {
@@ -208,4 +208,104 @@ nav {
     margin-bottom: 60px;
 }
 
+.project__img {
+    width: 100%;
+}
 
+.project__wrapper {       /* so we position the project description in the right place, so it displays above the project image, 
+                            we need to position relative project__wrapper and position absolute project__description */
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.project__wrapper:hover .project__description {    /* when we hover over project wrapper we target project description and this is when we want to set opacity back to normal */
+    opacity: 1;
+    transform: translateY(-50%);       /* you return to normal state  */
+
+}
+
+.project__wrapper:hover .project__img {    /* the background blurs on hover over, we target the project image, transform */
+    transform: scale(1.07);
+    filter: blur(5px);
+} 
+
+.project__wrapper:hover .project__wrapper--background {
+    opacity: 0.7;
+}
+/* only when we hover overthe project we want to add opacity to the background  */
+
+.project__description {
+    position: absolute;
+    top: 50%;        /* whenever you do top 50% you need to transform translate -50%, whenever you do, that centers it, this is how you do it with position absolute */
+    left: 90px;
+    transform: translateY(100%);        /* this is its normal state */
+    opacity: 0;
+    transition: opacity 300ms, transform 450ms ease;
+    color: white;
+    max-width: 550px;
+}
+
+.project__wrapper--background {        /* black background that pops up when hovering over the image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1d25;
+    opacity: 0.7;
+}
+
+.project__description--title {
+    font-size: 40px;
+}
+
+.project__description--subtitle {
+    margin-top: 8px;
+}
+
+.project__description--link {
+    color: white;
+    font-size: 20px;
+    margin-right: 16px;
+}
+.project__description--para {
+    margin: 16px 0;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #242424;
+    display: flex;
+    padding: 6% 0;
+}
+
+.footer__container {
+    margin: 0 auto;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* because we added flex direction column, align center - centers it horizontally */
+}
+
+.footer__logo--img {
+    width: 70px;
+ 
+}
+
+.footer__social--list {
+    width: 100%;
+    max-width: 500px;       /* so we bring them closer together */
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.footer__social--link, .footer__copyright {
+    color: white;
+}
