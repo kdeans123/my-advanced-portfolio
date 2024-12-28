@@ -52,6 +52,8 @@ section {
     padding: 0 12px;
 }
 
+         /* icons getting bigger after hovering */
+
 .click {
     transition: all 300ms ease;
 }
@@ -62,6 +64,36 @@ section {
 
 .click:active {   /* when you click */
     transform: scale(0.8);    
+}
+
+     /* xyz */
+.link__hover-effect {
+    position: relative;
+}
+
+.link__hover-effect:after {       /* we want to target after pseudo element, this lets us add things after the tag, but we want to add the animation, 
+    so we need to position absolute it  */
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    left: 0;
+    background-color: black;
+}
+
+.link__hover-effect--white:after {
+    background-color: white;
+}
+
+.link__hover-effect--black:after {
+    background-color: black;
+}
+
+.link__hover-effect:hover:after {      /* we need to target after pseudo element that is why :after */
+    left: 0;
+    width: 100%;
+    transition: all 300ms ease;
 }
 
 
@@ -199,6 +231,52 @@ nav {
 }
 
 
+/* MODAL - pop up with contact and about me info */
+
+.modal {
+    position: absolute;       /* we wan to center it and we do not want it to affect anything on the page */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    height: 700px;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);         /* box shadow */
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;       /* this brings halves next to each other */
+}
+
+.modal__half {
+    width: 50%;       /* so they take exactly half width  */
+}
+
+.modal__about {
+    background-color: rgb(245, 245, 245);
+    padding: 42px 72px;
+    display: flex;
+    flex-direction: column;
+}
+.modal__languages {
+    display: flex;
+    flex-wrap;
+}
+
+.modal__language--img {
+    width: 100%;
+}
+
+.modal__language {
+    width: 25%;
+}
+
+.modal__contact {
+    background-color: #242424;
+    color: white;
+}
+
+
+
 
 /* PROJECTS */
 
@@ -208,8 +286,17 @@ nav {
     margin-bottom: 60px;
 }
 
+.project {
+    margin-bottom: 135px;
+}
+
 .project__img {
     width: 100%;
+    transition: all 600ms ease;
+}
+
+.project:hover .project.img {
+    transform: scale(1.07);
 }
 
 .project__wrapper {       /* so we position the project description in the right place, so it displays above the project image, 
@@ -272,6 +359,12 @@ nav {
 }
 .project__description--para {
     margin: 16px 0;
+}
+
+.project__list {        /* so that there is a space between projects */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 
