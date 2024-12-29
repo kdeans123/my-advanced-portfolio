@@ -387,6 +387,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .modal__overlay--loading {    /* we need to add position relative to modal__half */
@@ -401,6 +402,7 @@ nav {
     font-weight: 700;
     text-align: center;
     padding: 28px;
+    z-index: -1;
 }
 
 .fa-spinner {         /* to make the spinner rotating we add animation with keyframes,a nd then you name it what you want to name it, "spinner" */
