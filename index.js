@@ -5,7 +5,7 @@
 
 function contact (event) {
     event.preventDefault();
-    ElementInternalsjs
+    emailjs
         .sendForm(
             'service_a317dbs',
             'template_1m5maw7',
@@ -14,6 +14,6 @@ function contact (event) {
      ).then(() => {
         console.log('this worked1')
      })
-    console.log('it worked')
+
 
 }

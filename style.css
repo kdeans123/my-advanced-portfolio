@@ -302,7 +302,7 @@ nav {
 
 .modal__languages {
     display: flex;
-    flex-wrap;
+    flex-wrap:wrap;
 }
 
 .modal__language {
