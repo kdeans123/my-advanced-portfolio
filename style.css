@@ -29,6 +29,40 @@ section {
     background-color: rgb(245, 245, 245);
 }
 
+input, textarea {
+    width: 100%;
+    background-color: #242424;
+    color: white;
+    outline: none;
+    border-bottom: 3px solid #c0c4cc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    height: 40px;
+    transition: all 300ms ease;
+}
+
+textarea {
+    resize: vertical;        /* to resize the text area  */
+    height: 100px;
+    margin-top: 8px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input:hover, textarea:hover {
+    border-color: #dcdfe6;
+}
+
+input:focus, textarea:focus {
+    border-color: #f06449;      /* so the color of the lines are changing when we hover over them  */
+}
+
+
+
 .orange {
     color: #f06449;
 }
@@ -56,6 +90,7 @@ section {
 
 .click {
     transition: all 300ms ease;
+    cursor: pointer;
 }
 
 .click:hover { 
@@ -249,15 +284,22 @@ nav {
 
 .modal__half {
     width: 50%;       /* so they take exactly half width  */
-}
-
-.modal__about {
-    background-color: rgb(245, 245, 245);
-    padding: 42px 72px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 42px 72px;
+    position: relative;
 }
+
+.modal__about {
+    background-color: rgb(245, 245, 245);  
+}
+
+.modal__contact {
+    background-color: #242424;
+    color: white;
+}
+
 .modal__languages {
     display: flex;
     flex-wrap;
@@ -269,8 +311,7 @@ nav {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    transform: scale(0);    /* by default we scale 0 and when we hover over - line below -  */
+    align-items: center;  
     transition: all 300ms ease;
 }
 
@@ -278,10 +319,17 @@ nav {
    transform: scale(1);
 }
 
+.modal__language:hover {
+    filter: brightness(80%);    /* so it gets a bit darker when hovered over */
+    transform: scale(0.9);   /* so it gets smaller when hover over */
+   
+}
+
 
 .language__name {
     position: absolute;
     bottom: -10px;
+    transform: scale(0);    /* by default we scale 0 and when we hover over - line below -  */
 }
 
 .modal__language--img {
@@ -290,10 +338,6 @@ nav {
 
 
 
-.modal__contact {
-    background-color: #242424;
-    color: white;
-}
 
 .modal__title {
     font-size: 26px;
@@ -307,6 +351,81 @@ nav {
     margin-bottom: 12px;
     line-height: 1.75;
 }
+
+.form__item {
+    margin-bottom: 20px;
+}
+
+.form__submit {
+    background-color: #f06449;
+    border: 2px solid #f06449;
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    max-width: 240px;
+    padding: 12px 24px;       /* it is adding height for us */
+    font-size: 20px;
+    transition: all 300ms ease;
+}
+
+.form__submit:hover {
+    border-color: white;
+    background-color: transparent;         /* transition color to transparent */
+}
+
+.form__submit:active {
+    border-color: #f06449;
+    color: #f06449;
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__overlay--loading {    /* we need to add position relative to modal__half */
+    background-color: blue;
+    font-size: 80px;
+    z-index: -1;
+}
+
+.modal__overlay--success {
+    background-color: #4bb543;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding: 28px;
+}
+
+.fa-spinner {         /* to make the spinner rotating we add animation with keyframes,a nd then you name it what you want to name it, "spinner" */
+    animation: spinner 750ms infinite linear;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modal__exit {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    z-index: 100;      /* we want to make sure it is absolutely in front of everything  */
+}
+
+
 
 
 /* PROJECTS */
