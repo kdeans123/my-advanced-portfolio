@@ -243,7 +243,8 @@ nav {
     width: 60px;
     height: 60px;
     /* filter: invert(1);    - this to be used when we want to change to the opposite color*/
-    zoom: 70%;
+    scale: 2;
+  
 }
 
 .nav__link--list {
