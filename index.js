@@ -33,8 +33,14 @@ function contact (event) {
      }, 1000);
 }
 
+let isModalOpen = false;
+
 function toggleModal() {
-    document.body.classList += " modal--open";
+    if (isModalOpen) {
+        return document.body.classList.remove("modal__open")
+    }
+    isModalOpen = !isModalOpen;
+    document.body.classList += " modal__open";
 
     // best practice is to target the body
 }
