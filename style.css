@@ -391,7 +391,7 @@ nav {
 }
 
 .modal__overlay--loading {    /* we need to add position relative to modal__half */
-    background-color: blue;
+    background-color: black;
     font-size: 80px;
     z-index: -1;
 }
@@ -403,6 +403,10 @@ nav {
     text-align: center;
     padding: 28px;
     z-index: -1;
+}
+
+.modal__overlay--visible {       /* we want o create a class that makes it visible, when they press the contact we show the loading  */
+    z-index: 1;
 }
 
 .fa-spinner {         /* to make the spinner rotating we add animation with keyframes,a nd then you name it what you want to name it, "spinner" */
