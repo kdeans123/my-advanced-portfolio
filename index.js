@@ -6,15 +6,19 @@
 
 let isModalOpen = false;
 let contrastToggle = false
+const scaleFactor = 1 / 20
 
 
 function moveBackground(event) {
     const shapes = document.querySelectorAll(".shape")
-    const x = event.clientX / 20;
-    const y = event.clientY / 20;
+    const x = event.clientX * scaleFactor;
+    const y = event.clientY * scaleFactor;
 
     for (let i=0; i < shapes.length; ++i) {
-        shape[i].style.transform = 'translate($ {x}px, $ {y}px)'
+        const isOdd = i % 2 !== 0
+        const oddInteger  = isOdd ? -1 : 1;
+        // it alows the shapes to move in different directions as it shows false and true alternately 
+        shapes[i].style.transform = 'translate(${x * oddInteger}px, ${y * oddInteger}px)'
     }
 
     // queryselectorAll - as we target them all 
