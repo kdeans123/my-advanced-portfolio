@@ -240,9 +240,10 @@ nav {
 }
 
 #personal-logo {   /* logo changes color from white to black , you can also transition it - using filter   */
-    width: 50px;
-    height: 50px;
-    filter: invert(1);
+    width: 60px;
+    height: 60px;
+    /* filter: invert(1);    - this to be used when we want to change to the opposite color*/
+    zoom: 70%;
 }
 
 .nav__link--list {
@@ -275,11 +276,12 @@ nav {
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 1100px;
-    height: 700px;
+    max-height: 700px;
     box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);         /* box shadow */
     border-radius: 20px;
     overflow: hidden;
     display: flex;       /* this brings halves next to each other */
+    
 }
 
 .modal__half {
