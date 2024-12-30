@@ -2,6 +2,24 @@
 // service_a317dbs    new:   service_t91zppx
 // public key, user id:    zoYiX0Ta0E9JsH9IP  new:   mjZvT58fzh8LQDid4
 
+// advised to keep all the variables at the top 
+
+let isModalOpen = false;
+let contrastToggle = false
+
+
+function toggleContrast() {
+    contrastToggle = !contrastToggle;
+    if (contrastToggle) {
+        document.body.classList += " dark-theme"
+    }
+    else {
+        document.body.classList.remove("dark-theme")
+    }
+    
+}
+
+
 
 function contact (event) {
     event.preventDefault();
@@ -33,7 +51,7 @@ function contact (event) {
      }, 1000);
 }
 
-let isModalOpen = false;
+
 function toggleModal() {
     if (isModalOpen) {
         isModalOpen = false;
