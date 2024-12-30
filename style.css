@@ -166,7 +166,7 @@ nav,
 }
 
 .dark-theme #personal-logo {
-    filter: none;
+    filter: invert(1);
 }
 
 .dark-theme .scroll__icon {
@@ -545,7 +545,7 @@ nav {
 } 
 
 .project__wrapper:hover .project__wrapper--background {
-    opacity: 0.7;
+    opacity: 0;
 }
 /* only when we hover overthe project we want to add opacity to the background  */
 
