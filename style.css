@@ -608,6 +608,7 @@ footer {
     background-color: black;
     display: flex;
     padding: 6% 0;
+    position: relative;       /* so that the shapes go behind it  */
 }
 
 .footer__container {
@@ -704,6 +705,51 @@ width = 5vw
 .shape--8 {
     top: 80vh;
     left: 80vw;
+}
+
+/* SMALL PHONE, TABLET< LARGE SMARTPHONE responsiveness */
+/* responsiveness is easier when we use flex box, we only need to use this amount of code to do responsiveness  */
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 80px;
+    }
+
+    .header__para {
+        font-size: 20px;
+    }
+
+    .modal {
+        top: 0;
+        left: 0;
+        height: auto;
+        transform: none;
+        width: 100%;
+        flex-direction: column-reverse;
+        border-radius: 0;
+    }
+
+    .modal__half {
+        width: 100%;
+
+    }
+}
+
+
+/* SMALL PHONE responsiveness */
+
+@media (max-width: 480px) {
+    .title {
+        font size: 52px;
+    }
+
+    .header__para {
+        font-size: 18px;
+    }
+
+    .nav__link:first-child {
+        display: none;
+    }
 }
 
 
