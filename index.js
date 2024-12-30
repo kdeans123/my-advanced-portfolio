@@ -16,9 +16,9 @@ function moveBackground(event) {
 
     for (let i=0; i < shapes.length; ++i) {
         const isOdd = i % 2 !== 0
-        const oddInteger  = isOdd ? -1 : 1;
+        const boolInt  = isOdd ? -1 : 1;
         // it alows the shapes to move in different directions as it shows false and true alternately 
-        shapes[i].style.transform = 'translate(${x * oddInteger}px, ${y * oddInteger}px)'
+        shapes[i].style.transform = 'translate(${x * boolInt}px, ${y * boolInt}px)'
     }
 
     // queryselectorAll - as we target them all 
