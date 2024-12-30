@@ -8,6 +8,19 @@ let isModalOpen = false;
 let contrastToggle = false
 
 
+function moveBackground(event) {
+    const shapes = document.querySelectorAll(".shape")
+    const x = event.clientX / 20;
+    const y = event.clientY / 20;
+
+    for (let i=0; i < shapes.length; ++i) {
+        shape[i].style.transform = 'translate($ {x}px, $ {y}px)'
+    }
+
+    // queryselectorAll - as we target them all 
+}
+
+
 function toggleContrast() {
     contrastToggle = !contrastToggle;
     if (contrastToggle) {
