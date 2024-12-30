@@ -74,6 +74,9 @@ input:focus, textarea:focus {
     line-height: 1;
 }
 
+
+/* this class is for the body, and we can utilze it for the toggle to close the cotact form  */
+
 .container {
     padding: 50px 0;     /* so there is some space top and bottom, and left and right space we will add to the row */
     width: 100%;         /* now the container is all the way wide */
@@ -243,8 +246,7 @@ nav {
     width: 60px;
     height: 60px;
     /* filter: invert(1);    - this to be used when we want to change to the opposite color*/
-    scale: 2;
-  
+    scale: 2;  
 }
 
 .nav__link--list {
@@ -277,12 +279,17 @@ nav {
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 1100px;
-    max-height: 700px;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);         /* box shadow */
+    max-height: 700px;  
     border-radius: 20px;
     overflow: hidden;
     display: flex;       /* this brings halves next to each other */
-    
+    visibility: hidden;    
+}
+
+.modal__open .modal { 
+    z-index: 60;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);         /* box shadow */
+    visibility: visible;
 }
 
 .modal__half {
@@ -530,7 +537,7 @@ nav {
 /* FOOTER */
 
 footer {
-    background-color: #242424;
+    background-color: black;
     display: flex;
     padding: 6% 0;
 }
@@ -546,8 +553,9 @@ footer {
 }
 
 .footer__logo--img {
-    width: 70px;
- 
+    width: 80px;
+    filter: invert(1); 
+    scale: 2; 
 }
 
 .footer__social--list {

@@ -25,21 +25,17 @@ function contact (event) {
         alert(
             "The email service is temporarily unavailable. Please contact me directly on email: kat.m.deans@gmail.com."
         )
-     }
-    
+     }    
     )
-
-
 // promises have also a catch - if the service is down, if there is an error, this is when the error comes in, it is important for user experience 
-
-
-
      setTimeout(() => {
-
          console.log('it worked 2')
      }, 1000);
- 
-
-
-
 }
+
+function toggleModal() {
+    document.body.classList += " modal--open";
+
+    // best practice is to target the body
+}
+
