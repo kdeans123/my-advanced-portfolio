@@ -7,6 +7,10 @@
     font-family: "Roboto", sans-serif;   /*  we need to google fonts: roboto regular 400, bold 700 and bold 900   */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 li {
     list-style-type: none;  /*   it gets rid of bullet points of the list */
 }
@@ -303,8 +307,8 @@ nav {
 }
 
 #personal-logo {   /* logo changes color from white to black , you can also transition it - using filter   */
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 80px;
     /* filter: invert(1);    - this to be used when we want to change to the opposite color*/
     scale: 2;  
 }
@@ -557,7 +561,7 @@ nav {
 } 
 
 .project__wrapper:hover .project__wrapper--background {
-    opacity: 0;
+    opacity: 0.7;
 }
 /* only when we hover overthe project we want to add opacity to the background  */
 
@@ -626,7 +630,7 @@ footer {
 }
 
 .footer__logo--img {
-    width: 80px;
+    width: 90px;
     filter: invert(1); 
     scale: 2; 
 }
