@@ -309,7 +309,8 @@ nav {
 #personal-logo {   /* logo changes color from white to black , you can also transition it - using filter   */
     width: 90px;
     height: 80px;
-    /* filter: invert(1);    - this to be used when we want to change to the opposite color*/
+    /* 
+       - this to be used when we want to change to the opposite color*/
     scale: 2;  
 }
 
@@ -545,7 +546,7 @@ nav {
                             we need to position relative project__wrapper and position absolute project__description */
     position: relative;
     border-radius: 20px;
-    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0, 0.45);
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.45);
     overflow: hidden;
 }
 
