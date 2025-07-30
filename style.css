@@ -763,6 +763,7 @@ width = 5vw
 
     .project__description--para {
         display: none;
+        font-size: 16px;
     }
 
     .project__description {
